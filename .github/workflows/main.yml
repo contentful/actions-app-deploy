@@ -1,0 +1,24 @@
+on: [push]
+
+jobs:
+  hello_world_job:
+    runs-on: ubuntu-latest
+    name: Job to deploy app to contentful
+    steps:
+      # To use this repository's private action,
+      # you must check out the repository
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Hello world action step
+        uses: ./ # Uses an action in the root directory
+        id: deploy
+        with:
+          organization-id: 'XX'
+          app-definition-id: 'xxx'
+          access-token: 'xxx'
+          folder: 'build'
+          
+      # Use the output from the `hello` step
+      - name: Get the output
+        run: echo "The time was ${{ steps.deploy.outputs.result }}"
