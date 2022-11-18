@@ -10,7 +10,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Hello world action step
+      - name: Deploy app action step
         uses: ./ # Uses an action in the root directory
         id: deploy
         with:
