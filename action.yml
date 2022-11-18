@@ -1,4 +1,4 @@
-name: 'Deploy frontend apps to Contentful'
+name: 'Contentful Deploy'
 description: 'Custom GitHub Action to deploy frontend apps to contentful'
 inputs:
   organization-id:
