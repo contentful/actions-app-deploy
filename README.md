@@ -1,23 +1,34 @@
-# Hello world javascript action
+# Contentful Deploy 
 
-This action prints "Hello World" or "Hello" + the name of a person to greet to the log.
-
+This action prints deploys frontend apps to contentful.
 ## Inputs
 
-### `who-to-greet`
+### `organization-id`
 
-**Required** The name of the person to greet. Default `"World"`.
+**Required** The id of the organization.
+### `app-definition-id`
+
+**Required** app-definition-id.
+### `access-token`
+
+**Required** access token required to deploy the app.
+### `folder`
+
+**Required** deploys a specific output folder to Contentful’s app hosting.
 
 ## Outputs
 
-### `time`
+### `result`
 
-The time we greeted you.
+Successfully Deployed or not.
 
 ## Example usage
 
 ```yaml
-uses: actions/hello-world-javascript-action@v1.1
+uses: contentful/app-deploy@v1
 with:
-  who-to-greet: 'Mona the Octocat'
+  organization-id: 'xxx'
+  app-definition-id: 'xxx'
+  access-token: 'xxx'
+  folder: 'build'
 ```
