@@ -1,13 +1,25 @@
-name: 'Hello World'
-description: 'Greet someone and record the time'
+name: 'Deploy frontend apps to Contentful'
+description: 'Custom GitHub Action to deploy frontend apps to contentful'
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
+  organization-id:
+    description: ''
     required: true
-    default: 'World'
+    default: ''
+  app-definition-id:
+    description: ''
+    required: true
+    default: ''
+  access-token:
+    description: ''
+    required: true
+    default: ''
+  folder:
+    description: ''
+    required: true
+    default: ''
 outputs:
-  time: # id of output
-    description: 'The time we greeted you'
+  result:
+    description: 'Successfully Deployed or not'
 runs:
   using: 'node16'
   main: 'index.js'
