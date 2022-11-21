@@ -3,22 +3,15 @@ on: [push]
 jobs:
   hello_world_job:
     runs-on: ubuntu-latest
-    name: Job to deploy app to contentful
+    name: Job to build custom GitHub action
     steps:
       # To use this repository's private action,
       # you must check out the repository
       - name: Checkout
         uses: actions/checkout@v3
-
-      - name: Deploy app action step
-        uses: ./ # Uses an action in the root directory
-        id: deploy
-        with:
-          organization-id: ${{ secrets.ORGANIZATION_ID }}
-          app-definition-id: ${{ secrets.APP_DEFINITION_ID }}
-          access-token: ${{ secrets.ACCESS_TOKEN }}
-          folder: ${{ secrets.FOLDER }}
-          
-      # Use the output from the `deploy` step
-      - name: Get the output
-        run: echo "The time was ${{ steps.deploy.outputs.result }}"
+       - run:
+          name: Install dependencies
+          command: npm ci
+      - run:
+          name: Build
+          command: npm run build
