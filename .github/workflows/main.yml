@@ -15,9 +15,9 @@ jobs:
         id: deploy
         with:
           organization-id: ${{ secrets.ORGANIZATION_ID }}
-          app-definition-id: ${{ secrets.APP_DEFINITION_ID }}
-          access-token: ${{ secrets.ACCESS_TOKEN }}
-          folder: ${{ secrets.FOLDER }}
+          definition-id: ${{ secrets.APP_DEFINITION_ID }}
+          token: ${{ secrets.ACCESS_TOKEN }}
+          bundle-dir: ${{ secrets.FOLDER }}
           
       # Use the output from the `deploy` step
       - name: Get the output
