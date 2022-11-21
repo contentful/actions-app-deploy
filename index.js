@@ -17,10 +17,10 @@ const deploy = async function () {
     console.log(`folder ${folder}!`);
 
     await upload.nonInteractive({
-      "--bundle-dir": folder,
-      "--organization-id": organizationId,
-      "--definition-id": "2MSkOZ6VLQh4dG097JhjEA",
-      "--token": accessToken,
+      "bundle-dir": folder,
+      "organization-id": organizationId,
+      "definition-id": appDefinitionId,
+      "token": accessToken,
     });
 
     const time = new Date().toTimeString();
