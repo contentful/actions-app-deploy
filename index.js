@@ -4,6 +4,12 @@ import { upload } from "@contentful/app-scripts";
 
 try {
   // `who-to-greet` input defined in action metadata file
+  deploy();
+} catch (error) {
+  core.setFailed(error.message);
+}
+
+const deploy = async function () {
   const organizationId = core.getInput("organization-id");
   console.log(`OrganizationId ${organizationId}!`);
 
@@ -27,6 +33,4 @@ try {
   // Get the JSON webhook payload for the event that triggered the workflow
   const payload = JSON.stringify(github.context.payload, undefined, 2);
   console.log(`The event payload: ${payload}`);
-} catch (error) {
-  core.setFailed(error.message);
-}
+};
