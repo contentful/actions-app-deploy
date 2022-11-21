@@ -1,6 +1,6 @@
-const core = require("@actions/core");
-const github = require("@actions/github");
-const { upload } = require("@contentful/app-scripts");
+import core from "@actions/core";
+import github from "@actions/github";
+import { upload } from "@contentful/app-scripts";
 
 try {
   // `who-to-greet` input defined in action metadata file
@@ -15,7 +15,7 @@ try {
   const folder = core.getInput("folder");
   console.log(`folder ${folder}!`);
 
-  upload.nonInteractive({
+  await upload.nonInteractive({
     "bundle-dir": folder,
     "organization-id": organizationId,
     "definition-id": appDefinitionId,
