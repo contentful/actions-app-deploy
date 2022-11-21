@@ -5,22 +5,22 @@ import { upload } from "@contentful/app-scripts";
 const deploy = async function () {
   try {
     const organizationId = core.getInput("organization-id");
-    console.log(`OrganizationId ${organizationId}!`);
+    console.log(`OrganizationId ${!!organizationId}!`);
 
     const appDefinitionId = core.getInput("app-definition-id");
-    console.log(`appDefinitionId ${appDefinitionId}!`);
+    console.log(`appDefinitionId ${!!appDefinitionId}!`);
 
     const accessToken = core.getInput("access-token");
-    console.log(`accessToken ${accessToken}!`);
+    console.log(`accessToken ${!!accessToken}!`);
 
     const folder = core.getInput("folder");
-    console.log(`folder ${folder}!`);
+    console.log(`folder ${!!folder}!`);
 
     await upload.nonInteractive({
-      "bundle-dir": folder,
-      "organization-id": organizationId,
-      "definition-id": appDefinitionId,
-      "token": accessToken,
+      "--bundle-dir": folder,
+      "--organization-id": organizationId,
+      "--definition-id": appDefinitionId,
+      "--token": accessToken,
     });
 
     const time = new Date().toTimeString();
