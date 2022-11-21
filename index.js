@@ -19,7 +19,7 @@ const deploy = async function () {
     await upload.nonInteractive({
       "--bundle-dir": folder,
       "--organization-id": organizationId,
-      "--definition-id": appDefinitionId,
+      "--definition-id": "2MSkOZ6VLQh4dG097JhjEA",
       "--token": accessToken,
     });
 
