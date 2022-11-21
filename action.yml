@@ -4,19 +4,15 @@ inputs:
   organization-id:
     description: ''
     required: true
-    default: ''
   app-definition-id:
     description: ''
     required: true
-    default: ''
   access-token:
     description: ''
     required: true
-    default: ''
   folder:
     description: ''
     required: true
-    default: ''
 outputs:
   result:
     description: 'Successfully Deployed or not'

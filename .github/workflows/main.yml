@@ -14,11 +14,11 @@ jobs:
         uses: ./ # Uses an action in the root directory
         id: deploy
         with:
-          organization-id: 'XX'
-          app-definition-id: 'xxx'
-          access-token: 'xxx'
-          folder: 'build'
+          organization-id: ${{ secrets.ORGANIZATION_ID }}
+          app-definition-id: ${{ secrets.APP_DEFINITION_ID }}
+          access-token: ${{ secrets.ACCESS_TOKEN }}
+          folder: ${{ secrets.FOLDER }}
           
-      # Use the output from the `hello` step
+      # Use the output from the `deploy` step
       - name: Get the output
         run: echo "The time was ${{ steps.deploy.outputs.result }}"
