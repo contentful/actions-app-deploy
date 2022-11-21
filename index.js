@@ -11,6 +11,7 @@ const deploy = async function () {
     console.log(`appDefinitionId ${appDefinitionId}!`);
 
     const accessToken = core.getInput("access-token");
+    console.log(`accessToken ${accessToken}!`);
 
     const folder = core.getInput("folder");
     console.log(`folder ${folder}!`);
