@@ -2,7 +2,7 @@ import core from "@actions/core";
 import github from "@actions/github";
 import { upload } from "@contentful/app-scripts";
 
-const deploy = async function () {
+const deploy = function () {
   try {
     const organizationId = core.getInput("organization-id");
     console.log(`OrganizationId ${organizationId}!`);
@@ -15,7 +15,7 @@ const deploy = async function () {
     const folder = core.getInput("folder");
     console.log(`folder ${folder}!`);
 
-    await upload.nonInteractive({
+    upload.nonInteractive({
       "bundle-dir": folder,
       "organization-id": organizationId,
       "definition-id": appDefinitionId,
