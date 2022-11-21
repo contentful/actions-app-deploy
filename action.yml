@@ -1,5 +1,5 @@
 name: 'Contentful App Deploy'
-description: 'Custom GitHub Action to deploy frontend apps to Contentful'
+description: 'Custom GitHub Action to deploy frontend apps to Contentful.'
 inputs:
   organization-id:
     description: ''
