@@ -1,5 +1,5 @@
-name: 'Contentful Deploy'
-description: 'Custom GitHub Action to deploy frontend apps to contentful'
+name: 'Contentful App Deploy'
+description: 'Custom GitHub Action to deploy frontend apps to Contentful'
 inputs:
   organization-id:
     description: ''
@@ -22,4 +22,4 @@ outputs:
     description: 'Successfully Deployed or not'
 runs:
   using: 'node16'
-  main: 'dist/index.js'
+  main: 'build.js'

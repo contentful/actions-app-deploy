@@ -1,6 +1,6 @@
 # Contentful Deploy 
 
-This action prints deploys frontend apps to contentful.
+This action deploys frontend apps to contentful.
 ## Inputs
 
 ### `organization-id`
