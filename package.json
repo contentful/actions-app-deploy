@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rimraf built && tsc && esbuild ./build/index.js --bundle --platform=node --minify --target=node16 --outfile=build.js --format=esm",
+    "build": "rimraf build && tsc && esbuild ./build/index.js --bundle --platform=node --minify --target=node16 --outfile=index.js --format=esm",
     "lint": "eslint --ext .js,.ts . --max-warnings 0 ./*.ts",
     "lint:fix": "npm run lint -- --fix"
   },

@@ -18,4 +18,4 @@ outputs:
     description: 'Successfully Deployed or not'
 runs:
   using: 'node16'
-  main: 'build.js'
+  main: 'index.js'
