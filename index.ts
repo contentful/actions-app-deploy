@@ -7,7 +7,7 @@ const deploy = async function (): Promise<void> {
     const appDefinitionId: string = core.getInput("app-definition-id");
     const accessToken: string = core.getInput("access-token");
     const folder: string = core.getInput("folder");
-    
+
     await upload.nonInteractive({
       bundleDir: folder,
       organizationId,
