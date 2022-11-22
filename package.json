@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "esbuild index.js --bundle --platform=node --minify --target=node16 --outfile=build.js --format=esm"
+    "lint": "eslint --ext .js,.ts . --max-warnings 0 ./*.ts",
+    "lint:fix": "npm run lint -- --fix",
+    "build": "rimraf built && tsc"
   },
   "repository": {
     "type": "git",
@@ -21,7 +23,17 @@
   "dependencies": {
     "@actions/core": "^1.10.0",
     "@actions/github": "^5.1.1",
-    "@contentful/app-scripts": "^1.2.2",
     "esbuild": "^0.15.15"
+  },
+  "devDependencies": {
+    "@contentful/app-scripts": "^1.2.3",
+    "@typescript-eslint/eslint-plugin": "^5.44.0",
+    "eslint": "^8.28.0",
+    "eslint-config-standard-with-typescript": "^23.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.5.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.9.3"
   }
 }
