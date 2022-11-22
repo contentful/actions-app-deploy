@@ -14,8 +14,8 @@
     "noErrorTruncation": true,         
     "strict": true, 
     "pretty": true,
-    "noImplicitAny": false,                                     
+    // "noImplicitAny": false,                                     
     "skipLibCheck": true,
-    "typeRoots": ["./typings", "./node_modules/@types"]                          
+    "typeRoots": ["./node_modules/@types"]                          
   }
 }

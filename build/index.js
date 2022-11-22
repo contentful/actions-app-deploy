@@ -8,13 +8,9 @@ const core_1 = __importDefault(require("@actions/core"));
 const deploy = async function () {
     try {
         const organizationId = core_1.default.getInput("organization-id");
-        console.log(`OrganizationId ${!!organizationId}!`);
         const appDefinitionId = core_1.default.getInput("app-definition-id");
-        console.log(`appDefinitionId ${!!appDefinitionId}!`);
         const accessToken = core_1.default.getInput("access-token");
-        console.log(`accessToken ${!!accessToken}!`);
         const folder = core_1.default.getInput("folder");
-        console.log(`folder ${!!folder}!`);
         await app_scripts_1.upload.nonInteractive({
             bundleDir: folder,
             organizationId,

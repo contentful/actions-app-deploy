@@ -1,20 +1,13 @@
 import { upload } from "@contentful/app-scripts";
 import core from "@actions/core";
 
-const deploy = async function () {
+const deploy = async function (): Promise<void> {
   try {
     const organizationId: string = core.getInput("organization-id");
-    console.log(`OrganizationId ${!!organizationId}!`);
-
     const appDefinitionId: string = core.getInput("app-definition-id");
-    console.log(`appDefinitionId ${!!appDefinitionId}!`);
-
     const accessToken: string = core.getInput("access-token");
-    console.log(`accessToken ${!!accessToken}!`);
-
     const folder: string = core.getInput("folder");
-    console.log(`folder ${!!folder}!`);
-
+    
     await upload.nonInteractive({
       bundleDir: folder,
       organizationId,
