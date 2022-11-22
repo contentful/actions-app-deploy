@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "esbuild index.js --bundle --platform=node --minify --target=node16 --outfile=build.js --format=esm"
+    "build": "rimraf build && tsc && ncc build ./build/index.js --license licenses.txt"
   },
   "repository": {
     "type": "git",
@@ -22,6 +22,11 @@
     "@actions/core": "^1.10.0",
     "@actions/github": "^5.1.1",
     "@contentful/app-scripts": "^1.2.2",
+    "@vercel/ncc": "^0.34.0",
     "esbuild": "^0.15.15"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.9",
+    "typescript": "^4.9.3"
   }
 }
