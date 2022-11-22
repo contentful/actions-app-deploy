@@ -1,21 +1,19 @@
 {
   "compilerOptions": {
-    "target": "es2020",                                
-    "module": "commonjs",                             
-    "outDir": "./build",                                  
+    "target": "es2020",
+    "outDir": "./build",
     "esModuleInterop": true,
-    "moduleResolution": "node",  
-    "sourceMap": true,                           
-    "forceConsistentCasingInFileNames": true,  
+    "moduleResolution": "node",
+    "forceConsistentCasingInFileNames": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noImplicitReturns": true,
     "noEmitOnError": true,
-    "noErrorTruncation": true,         
-    "strict": true, 
+    "noErrorTruncation": true,
+    "strict": true,
     "pretty": true,
-    "noImplicitAny": false,                                     
+    "noImplicitAny": false,
     "skipLibCheck": true,
-    "typeRoots": ["./typings", "./node_modules/@types"]                          
+    "typeRoots": ["./typings", "./node_modules/@types"]
   }
 }
