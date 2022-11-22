@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "type":"module",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rimraf build && tsc && esbuild index.js --bundle --platform=node --target=node16 --outfile=build.js --format=esm",
+    "build": "rimraf build && tsc && ncc build ./build/index.js --license licenses.txt",
     "lint": "eslint --ext .js,.ts . --max-warnings 0 ./*.ts",
     "lint:fix": "npm run lint -- --fix"
   },
@@ -24,7 +24,9 @@
   "dependencies": {
     "@actions/core": "^1.10.0",
     "@actions/github": "^5.1.1",
-    "esbuild": "^0.15.15"
+    "@vercel/ncc": "^0.34.0",
+    "esbuild": "^0.15.15",
+    "rollup": "^3.4.0"
   },
   "devDependencies": {
     "@contentful/app-scripts": "^1.2.3",
