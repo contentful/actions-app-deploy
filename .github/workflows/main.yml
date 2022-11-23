@@ -1,7 +1,7 @@
 on: [push]
 
 jobs:
-  hello_world_job:
+  deply_app_job:
     runs-on: ubuntu-latest
     strategy:
       matrix:
