@@ -3,7 +3,7 @@ import core from "@actions/core";
 
 const deploy = async function (): Promise<void> {
   try {
-    const organizationId: string = core.getInput("organization-id")
+    const organizationId: string = core.getInput("organization-id");
     const appDefinitionId: string = core.getInput("app-definition-id");
     const accessToken: string = core.getInput("access-token");
     const folder: string = core.getInput("folder");
