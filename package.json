@@ -8,7 +8,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rimraf build && tsc && ncc build ./build/index.js --license licenses.txt",
     "lint": "eslint --ext .js,.ts . --max-warnings 0 ./*.ts",
-    "lint:fix": "npm run lint -- --fix"
+    "lint:fix": "npm run lint -- --fix",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -36,6 +37,7 @@
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-n": "^15.5.1",
     "eslint-plugin-promise": "^6.1.1",
+    "husky": "^8.0.2",
     "rimraf": "^3.0.2",
     "typescript": "^4.9.3"
   }
