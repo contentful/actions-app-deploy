@@ -13,6 +13,7 @@ const deploy = async function (): Promise<void> {
       organizationId,
       definitionId: appDefinitionId,
       token: accessToken,
+      userAgentApplication: 'github.action'
     });
 
   } catch (error: any) {

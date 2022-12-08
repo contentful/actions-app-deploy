@@ -84602,6 +84602,7 @@ const deploy = async function () {
             organizationId,
             definitionId: appDefinitionId,
             token: accessToken,
+            userAgentApplication: 'github.action'
         });
     }
     catch (error) {
