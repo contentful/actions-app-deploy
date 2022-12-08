@@ -84603,8 +84603,6 @@ const deploy = async function () {
             definitionId: appDefinitionId,
             token: accessToken,
         });
-        const time = new Date().toTimeString();
-        _actions_core__WEBPACK_IMPORTED_MODULE_1__.setOutput("time", time);
     }
     catch (error) {
         _actions_core__WEBPACK_IMPORTED_MODULE_1__.setFailed(error.message);

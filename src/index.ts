@@ -15,8 +15,6 @@ const deploy = async function (): Promise<void> {
       token: accessToken,
     });
 
-    const time = new Date().toTimeString();
-    core.setOutput("time", time);
   } catch (error: any) {
     core.setFailed(error.message);
   }

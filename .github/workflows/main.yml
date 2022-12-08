@@ -1,7 +1,7 @@
 on: [push]
 
 jobs:
-  deply_app_job:
+  deploy_app_job:
     runs-on: ubuntu-latest
     strategy:
       matrix:

@@ -25,13 +25,11 @@
   "dependencies": {
     "@actions/core": "^1.10.0",
     "@actions/github": "^5.1.1",
-    "@vercel/ncc": "^0.34.0",
-    "esbuild": "^0.15.15",
-    "rollup": "^3.4.0"
+    "@contentful/app-scripts": "^1.2.3"
   },
   "devDependencies": {
-    "@contentful/app-scripts": "^1.2.3",
     "@typescript-eslint/eslint-plugin": "^5.44.0",
+    "@vercel/ncc": "^0.34.0",
     "eslint": "^8.28.0",
     "eslint-config-standard-with-typescript": "^23.0.0",
     "eslint-plugin-import": "^2.26.0",
