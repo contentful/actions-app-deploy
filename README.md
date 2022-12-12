@@ -22,7 +22,7 @@ If your App is hosted on Contentful App Hosting, you can use this GitHub action 
 
 ### The workflow file
 
-To use this GitHub action, you need to create a GitHub workflow file in your repository. The workflow file should be placed in the `.github/workflows` directory in your repository. The workflow file should be named `app-deploy.yml`.
+To use this GitHub action, you need to create a GitHub workflow file in your repository. The workflow file should be placed in the `.github/workflows` directory in your repository.
 
 The contents of the workflow file should be as follows:
 
