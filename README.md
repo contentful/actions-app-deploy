@@ -1,34 +1,89 @@
-# Contentful Deploy 
+# Contentful App Deploy
 
-This action deploys frontend apps to contentful.
-## Inputs
+This GitHub Action enables you to automatically upload frontend apps to Contentful App Hosting.
 
-### `organization-id`
+## What is Contentful
 
-**Required** The id of the organization.
-### `app-definition-id`
+[Contentful](https://www.contentful.com/) provides content infrastructure for digital teams to power content in websites, apps, and devices. Unlike a CMS, Contentful was built to integrate with the modern software stack. It offers a central hub for structured content, powerful management and delivery APIs, and a customisable web app that enables developers and content creators to ship digital products faster.
 
-**Required** app-definition-id.
-### `access-token`
+Contentful is a hosted service, with a free plan for small projects. It is available in 14 languages and has over 100,000 users worldwide.
 
-**Required** access token required to deploy the app.
-### `folder`
+## What are Contentful Apps
 
-**Required** deploys a specific output folder to Contentful’s app hosting.
+Apps are packages that simplify customization and integration by modifying your Contentful space. An app can help adapt Contentful to individual business processes and integrate with other services.
 
-## Outputs
+Check out [Contentful App Framework](https://www.contentful.com/developers/docs/extensibility/app-framework/) to learn more about Contentful Apps.
 
-### `result`
+## Why use this GitHub-action
 
-Successfully Deployed or not.
+If your App is hosted on Contentful App Hosting, you can use this GitHub action to automatically deploy your App after pushing your code. This saves a lot of time and manual uploading.
 
-## Example usage
+## Usage
+
+### The workflow file
+
+To use this GitHub action, you need to create a GitHub workflow file in your repository. The workflow file should be placed in the `.github/workflows` directory in your repository.
+
+The contents of the workflow file should be as follows:
 
 ```yaml
-uses: contentful/app-deploy@v1
-with:
-  organization-id: 'xxx'
-  app-definition-id: 'xxx'
-  access-token: 'xxx'
-  folder: 'build'
+on: [push]
+
+jobs:
+  deploy_job:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [16.x]
+    name: Job to deploy app to Contentful
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: npm ci
+      - run: npm run build
+      - uses: contentful/app-deploy@v1.10
+        with:
+          organization-id: ${{ secrets.ORGANIZATION_ID }}
+          app-definition-id: ${{ secrets.APP_DEFINITION_ID }}
+          access-token: ${{ secrets.ACCESS_TOKEN }}
+          folder: ${{ secrets.FOLDER }}
 ```
+
+### Configuration
+
+On Github, in the repository of the App go to settings, click `Secrets` (under security) and open `actions`. You need to add the following secrets:
+
+- `organization-id` (_required_): The id of the organization.
+- `app-definition-id` (_required_): The ID of the app definition.
+- `access-token` (_required_): An Access token for the Contentful Management API.
+- `folder` (_required_): The folder which is deployed to Contentful App Hosting. Usually, this is the `build` folder.
+
+## Running
+
+After you have created the workflow file and added the secrets, you can push your code to the repository. The GitHub action will automatically run and deploy your App to Contentful App Hosting.
+You can see the progress of the workflow in the `Actions` tab of your repository.
+
+## FAQ
+
+**Where to find the organization ID**
+
+Log into Contentful.
+Click the Organization name in the top left corner, then "Organization settings".
+Click the "Subscription" tab. The ID is listed beneath the organization name.
+
+**Where to find the app definition ID**
+
+Log into Contentful.
+From your space, go to the `Apps` tab and click `Custom apps`.
+Click `Manage app definitions` and you will see an overview of your custom apps, with the ID printed in the ID column.
+
+**Where to find or create an CMA access token**
+
+You can read more about access-tokens [here](https://www.contentful.com/help/personal-access-tokens/)
+
+## License
+
+[MIT](LICENSE)
