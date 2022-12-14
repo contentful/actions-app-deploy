@@ -1,7 +1,9 @@
 {
-  "name": "action-publish-apps-contentful",
+  "name": "actions-app-deploy",
   "version": "1.0.0",
-  "description": "",
+  "author": "Contentful GmbH",
+  "license": "UNLICENSED",
+  "description": "Custom GitHub Action to deploy frontend apps to Contentful.",
   "main": "index.js",
   "type": "module",
   "scripts": {
@@ -13,11 +15,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/contentful/action-publish-apps-contentful.git"
+    "url": "git+https://https://github.com/contentful/actions-app-deploy.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "github action",
+    "Contentful app deploy"
+  ],
   "bugs": {
     "url": "https://github.com/contentful/action-publish-apps-contentful/issues"
   },

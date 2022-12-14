@@ -84591,7 +84591,7 @@ var __webpack_exports__ = {};
 /* harmony import */ var _actions_core__WEBPACK_IMPORTED_MODULE_1__ = __nccwpck_require__(42186);
 
 
-const deploy = async function () {
+async function deploy() {
     try {
         const organizationId = _actions_core__WEBPACK_IMPORTED_MODULE_1__.getInput("organization-id");
         const appDefinitionId = _actions_core__WEBPACK_IMPORTED_MODULE_1__.getInput("app-definition-id");
@@ -84602,13 +84602,14 @@ const deploy = async function () {
             organizationId,
             definitionId: appDefinitionId,
             token: accessToken,
-            userAgentApplication: 'github.action'
+            userAgentApplication: 'contentful.actions-app-deploy'
         });
     }
     catch (error) {
         _actions_core__WEBPACK_IMPORTED_MODULE_1__.setFailed(error.message);
     }
-};
+}
+;
 deploy();
 
 })();

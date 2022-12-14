@@ -1,7 +1,7 @@
 import { upload } from "@contentful/app-scripts";
 import core from "@actions/core";
 
-const deploy = async function (): Promise<void> {
+async function deploy(): Promise<void> {
   try {
     const organizationId: string = core.getInput("organization-id");
     const appDefinitionId: string = core.getInput("app-definition-id");
@@ -13,7 +13,7 @@ const deploy = async function (): Promise<void> {
       organizationId,
       definitionId: appDefinitionId,
       token: accessToken,
-      userAgentApplication: 'github.action'
+      userAgentApplication: 'contentful.actions-app-deploy'
     });
 
   } catch (error: any) {
