@@ -31,6 +31,7 @@
     "@contentful/app-scripts": "^1.2.3"
   },
   "devDependencies": {
+    "@tsconfig/node-lts-strictest-esm": "^18.12.1",
     "@typescript-eslint/eslint-plugin": "^5.44.0",
     "@vercel/ncc": "^0.34.0",
     "eslint": "^8.28.0",

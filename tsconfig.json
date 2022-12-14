@@ -1,20 +1,3 @@
 {
-  "compilerOptions": {
-    "target": "es2020",
-    "outDir": "./build",
-    "rootDir": "./src",
-    "esModuleInterop": true,
-    "moduleResolution": "node",
-    "forceConsistentCasingInFileNames": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noImplicitReturns": true,
-    "noEmitOnError": true,
-    "noErrorTruncation": true,
-    "strict": true,
-    "pretty": true,
-    "noImplicitAny": false,
-    "skipLibCheck": true,
-    "typeRoots": ["./typings", "./node_modules/@types"]
-  }
+  "extends": "@tsconfig/node-lts-strictest-esm/tsconfig.json"
 }
