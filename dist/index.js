@@ -84602,14 +84602,13 @@ async function deploy() {
             organizationId,
             definitionId: appDefinitionId,
             token: accessToken,
-            userAgentApplication: 'contentful.actions-app-deploy'
+            userAgentApplication: "contentful.actions-app-deploy",
         });
     }
     catch (error) {
-        _actions_core__WEBPACK_IMPORTED_MODULE_1__.setFailed(error.message);
+        _actions_core__WEBPACK_IMPORTED_MODULE_1__.setFailed(`${error?.message ?? error}`);
     }
 }
-;
 deploy();
 
 })();

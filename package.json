@@ -1,5 +1,6 @@
 {
   "name": "actions-app-deploy",
+  "private": true,
   "version": "1.0.0",
   "author": "Contentful GmbH",
   "license": "MIT",
@@ -9,17 +10,21 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rimraf build && tsc && ncc build ./build/index.js --license licenses.txt",
-    "lint": "eslint --ext .js,.ts . --max-warnings 0 ./*.ts",
     "lint:fix": "npm run lint -- --fix",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "format": "prettier --write '**/*.ts'",
+    "format-check": "prettier --check '**/*.ts'",
+    "lint": "eslint src/*.ts"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://https://github.com/contentful/actions-app-deploy.git"
+    "url": "git+https://github.com/contentful/actions-app-deploy.git"
   },
   "keywords": [
-    "github action",
-    "Contentful app deploy"
+    "github",
+    "action",
+    "Contentful",
+    "app deploy"
   ],
   "bugs": {
     "url": "https://github.com/contentful/action-publish-apps-contentful/issues"
@@ -40,6 +45,7 @@
     "eslint-plugin-n": "^15.5.1",
     "eslint-plugin-promise": "^6.1.1",
     "husky": "^8.0.2",
+    "prettier": "2.8.1",
     "rimraf": "^3.0.2",
     "typescript": "^4.9.3"
   }

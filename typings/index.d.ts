@@ -1,1 +1,1 @@
-declare module '@contentful/app-scripts';
+declare module "@contentful/app-scripts";

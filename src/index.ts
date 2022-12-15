@@ -13,12 +13,11 @@ async function deploy(): Promise<void> {
       organizationId,
       definitionId: appDefinitionId,
       token: accessToken,
-      userAgentApplication: 'contentful.actions-app-deploy'
+      userAgentApplication: "contentful.actions-app-deploy",
     });
-
-  } catch (error: any) {
-    core.setFailed(error.message);
+  } catch (error) {
+    core.setFailed(`${(error as any)?.message ?? error}`)
   }
-};
+}
 
 deploy();
