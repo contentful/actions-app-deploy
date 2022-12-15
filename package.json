@@ -9,7 +9,7 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rimraf build && tsc && ncc build ./build/index.js --license licenses.txt",
+    "build": "rimraf build && rimraf dist && tsc && ncc build ./build/index.js --license licenses.txt",
     "lint:fix": "npm run lint -- --fix",
     "prepare": "husky install",
     "format": "prettier --write '**/*.ts'",
