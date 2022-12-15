@@ -2,7 +2,7 @@
   "name": "actions-app-deploy",
   "version": "1.0.0",
   "author": "Contentful GmbH",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "description": "Custom GitHub Action to deploy frontend apps to Contentful.",
   "main": "index.js",
   "type": "module",
