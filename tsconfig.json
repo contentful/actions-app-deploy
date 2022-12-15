@@ -1,0 +1,7 @@
+{
+  "extends": "@tsconfig/node-lts-strictest-esm/tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./build",
+    "rootDir": "./src"
+  }
+}
