@@ -14,7 +14,7 @@ Apps are packages that simplify customization and integration by modifying your 
 
 Check out [Contentful App Framework](https://www.contentful.com/developers/docs/extensibility/app-framework/) to learn more about Contentful Apps.
 
-## Why use this GitHub Actions
+## Why use this GitHub Action
 
 If your App is hosted on Contentful App Hosting, you can use this GitHub Action to automatically deploy your App after pushing your code. This saves a lot of time and manual uploading.
 
