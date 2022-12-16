@@ -53,7 +53,7 @@ jobs:
 
 - `organization-id` (_required_): The id of the organization.
 - `app-definition-id` (_required_): The id of the app definition.
-- `access-token` (_required_): An personal access token for the Content Management API. Should be stored as a secret in your GitHub repository (`Settings` -> `Secrets` -> `Actions`).
+- `access-token` (_required_): A personal access token for the Content Management API. Should be stored as a secret in your GitHub repository (`Settings` -> `Secrets` -> `Actions`).
 - `folder` (_required_): The folder which is deployed to Contentful App Hosting. Usually, this is the `build` folder.
 
 ## Running
