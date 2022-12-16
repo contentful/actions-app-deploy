@@ -8,7 +8,7 @@ inputs:
     description: 'The id of the app definition'
     required: true
   access-token:
-    description: 'An Access token for the Content Management API'
+    description: 'An personal access token for the Content Management API'
     required: true
   folder:
     description: 'The folder which is deployed to Contentful App Hosting'
