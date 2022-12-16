@@ -2,20 +2,17 @@ name: 'Contentful App Deploy'
 description: 'Custom GitHub Action to deploy frontend apps to Contentful.'
 inputs:
   organization-id:
-    description: ''
+    description: 'The id of the organization'
     required: true
   app-definition-id:
-    description: ''
+    description: 'The id of the app definition'
     required: true
   access-token:
-    description: ''
+    description: 'An Access token for the Content Management API'
     required: true
   folder:
-    description: ''
+    description: 'The folder which is deployed to Contentful App Hosting'
     required: true
-outputs:
-  result:
-    description: 'Successfully Deployed or not'
 runs:
   using: 'node16'
   main: 'dist/index.js'
