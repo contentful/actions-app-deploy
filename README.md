@@ -1,6 +1,6 @@
 # Contentful App Deploy
 
-This GitHub Action enables you to automatically upload frontend apps to Contentful App Hosting.
+This GitHub Action deploys your frontend apps to Contentful App Hosting.
 
 ## What is Contentful
 
@@ -14,15 +14,15 @@ Apps are packages that simplify customization and integration by modifying your 
 
 Check out [Contentful App Framework](https://www.contentful.com/developers/docs/extensibility/app-framework/) to learn more about Contentful Apps.
 
-## Why use this GitHub-action
+## Why use this GitHub Actions
 
-If your App is hosted on Contentful App Hosting, you can use this GitHub action to automatically deploy your App after pushing your code. This saves a lot of time and manual uploading.
+If your App is hosted on Contentful App Hosting, you can use this GitHub Action to automatically deploy your App after pushing your code. This saves a lot of time and manual uploading.
 
 ## Usage
 
 ### The workflow file
 
-To use this GitHub action, you need to create a GitHub workflow file in your repository. The workflow file should be placed in the `.github/workflows` directory in your repository.
+To use this GitHub Action, you need to create a GitHub workflow file in your repository. The workflow file should be placed in the `.github/workflows` directory in your repository.
 
 The contents of the workflow file should be as follows:
 
@@ -32,38 +32,33 @@ on: [push]
 jobs:
   deploy_job:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [16.x]
-    name: Job to deploy app to Contentful
+    name: Deploy app to Contentful
     steps:
       - uses: actions/checkout@v3
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Use Node.js 16.x
         uses: actions/setup-node@v3
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: 16.x
       - run: npm ci
       - run: npm run build
-      - uses: contentful/app-deploy@v1.10
+      - uses: contentful/actions-app-deploy@v1
         with:
           organization-id: ${{ secrets.ORGANIZATION_ID }}
           app-definition-id: ${{ secrets.APP_DEFINITION_ID }}
           access-token: ${{ secrets.ACCESS_TOKEN }}
-          folder: ${{ secrets.FOLDER }}
+          folder: build
 ```
 
-### Configuration
-
-On Github, in the repository of the App go to settings, click `Secrets` (under security) and open `actions`. You need to add the following secrets:
+### Parameters
 
 - `organization-id` (_required_): The id of the organization.
-- `app-definition-id` (_required_): The ID of the app definition.
-- `access-token` (_required_): An Access token for the Contentful Management API.
+- `app-definition-id` (_required_): The id of the app definition.
+- `access-token` (_required_): An Access token for the Content Management API. Should be stored as a secret in your GitHub repository (`Settings` -> `Secrets` -> `Actions`).
 - `folder` (_required_): The folder which is deployed to Contentful App Hosting. Usually, this is the `build` folder.
 
 ## Running
 
-After you have created the workflow file and added the secrets, you can push your code to the repository. The GitHub action will automatically run and deploy your App to Contentful App Hosting.
+After you have created the workflow file and added the secrets, you can push your code to the repository. The GitHub Action will automatically run and deploy your App to Contentful App Hosting.
 You can see the progress of the workflow in the `Actions` tab of your repository.
 
 ## FAQ
@@ -80,9 +75,9 @@ Log into Contentful.
 From your space, go to the `Apps` tab and click `Custom apps`.
 Click `Manage app definitions` and you will see an overview of your custom apps, with the ID printed in the ID column.
 
-**Where to find or create an CMA access token**
+**Where to find or create a personal access token**
 
-You can read more about access-tokens [here](https://www.contentful.com/help/personal-access-tokens/)
+You can read more about access tokens [here](https://www.contentful.com/help/personal-access-tokens/)
 
 ## License
 
