@@ -1,5 +1,6 @@
 import { upload } from "@contentful/app-scripts";
-import core from "@actions/core";
+import * as core from '@actions/core'
+import * as github from '@actions/github'
 
 async function deploy(): Promise<void> {
   try {
@@ -7,6 +8,10 @@ async function deploy(): Promise<void> {
     const appDefinitionId: string = core.getInput("app-definition-id");
     const accessToken: string = core.getInput("access-token");
     const folder: string = core.getInput("folder");
+
+    const branch = github.context.ref
+
+    core.setOutput('branch', branch)
 
     await upload.nonInteractive({
       bundleDir: folder,
