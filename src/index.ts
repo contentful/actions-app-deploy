@@ -11,7 +11,7 @@ async function deploy(): Promise<void> {
 
     const branch = github.context.ref
 
-    core.setOutput('branch', branch)
+    core.warning(`branch, ${branch}`)
 
     await upload.nonInteractive({
       bundleDir: folder,
