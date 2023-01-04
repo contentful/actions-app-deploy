@@ -9,7 +9,7 @@ async function deploy(): Promise<void> {
     const accessToken: string = core.getInput("access-token");
     const folder: string = core.getInput("folder");
 
-    const branch = github.context.ref
+    const branch = github.context.payload["ref"]
 
     core.warning(`branch, ${branch}`)
 
