@@ -8,7 +8,7 @@ class AnalyticsClient {
   private client: Analytics
 
   constructor() {
-    this.client = new Analytics('');
+    this.client = new Analytics(process.env['write_key'] || '');
   }
 
   track(properties: Properties) {

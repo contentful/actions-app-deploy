@@ -91634,6 +91634,14 @@ function wrappy (fn, cb) {
 
 /***/ }),
 
+/***/ 71184:
+/***/ ((module) => {
+
+module.exports = eval("require")("./analytics");
+
+
+/***/ }),
+
 /***/ 22877:
 /***/ ((module) => {
 
@@ -91937,6 +91945,8 @@ var __webpack_exports__ = {};
 /* harmony import */ var _contentful_app_scripts__WEBPACK_IMPORTED_MODULE_0__ = __nccwpck_require__(5265);
 /* harmony import */ var _actions_core__WEBPACK_IMPORTED_MODULE_1__ = __nccwpck_require__(42186);
 /* harmony import */ var _actions_github__WEBPACK_IMPORTED_MODULE_2__ = __nccwpck_require__(95438);
+/* harmony import */ var _analytics__WEBPACK_IMPORTED_MODULE_3__ = __nccwpck_require__(71184);
+
 
 
 
@@ -91946,8 +91956,9 @@ async function deploy() {
         const appDefinitionId = _actions_core__WEBPACK_IMPORTED_MODULE_1__.getInput("app-definition-id");
         const accessToken = _actions_core__WEBPACK_IMPORTED_MODULE_1__.getInput("access-token");
         const folder = _actions_core__WEBPACK_IMPORTED_MODULE_1__.getInput("folder");
-        const branch = _actions_github__WEBPACK_IMPORTED_MODULE_2__.context.payload.ref;
-        _actions_core__WEBPACK_IMPORTED_MODULE_1__.warning(`branch, ${branch}`);
+        const branchDeployed = _actions_github__WEBPACK_IMPORTED_MODULE_2__.context.payload.ref;
+        _actions_core__WEBPACK_IMPORTED_MODULE_1__.warning(`branch, ${branchDeployed}`);
+        _analytics__WEBPACK_IMPORTED_MODULE_3__.track({ branch: branchDeployed });
         await _contentful_app_scripts__WEBPACK_IMPORTED_MODULE_0__.upload.nonInteractive({
             bundleDir: folder,
             organizationId,

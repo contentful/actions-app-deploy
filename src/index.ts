@@ -1,6 +1,7 @@
 import { upload } from "@contentful/app-scripts";
 import * as core from '@actions/core'
 import * as github from '@actions/github'
+import  AnalyticsClient  from  './analytics'
 
 async function deploy(): Promise<void> {
   try {
@@ -9,9 +10,11 @@ async function deploy(): Promise<void> {
     const accessToken: string = core.getInput("access-token");
     const folder: string = core.getInput("folder");
 
-    const branch = github.context.payload["ref"]
+    const branchDeployed = github.context.payload["ref"]
 
-    core.warning(`branch, ${branch}`)
+    core.warning(`branch, ${branchDeployed}`)
+
+    AnalyticsClient.track({branch: branchDeployed })
 
     await upload.nonInteractive({
       bundleDir: folder,
