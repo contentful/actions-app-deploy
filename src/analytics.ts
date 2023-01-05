@@ -12,10 +12,7 @@ class AnalyticsClient {
   }
 
   track(properties: Properties) {
-    if (process.env['DISABLE_ANALYTICS']) {
-      return;
-    }
-
+    
     const segmentEvent: Parameters<Analytics['track']>[0] = {
       event: '',
       properties,
