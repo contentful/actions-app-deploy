@@ -20,7 +20,7 @@ export function track(properties: GitHubActionEventProperties) {
       anonymousId: 'anonymous',
       timestamp: new Date(),
     });
-    // eslint-disable-next-line no-empty
+    
   } catch (e) {
     console.error(e);
   }
