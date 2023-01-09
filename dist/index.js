@@ -91956,9 +91956,9 @@ async function deploy() {
         const appDefinitionId = _actions_core__WEBPACK_IMPORTED_MODULE_1__.getInput("app-definition-id");
         const accessToken = _actions_core__WEBPACK_IMPORTED_MODULE_1__.getInput("access-token");
         const folder = _actions_core__WEBPACK_IMPORTED_MODULE_1__.getInput("folder");
-        const branchDeployed = _actions_github__WEBPACK_IMPORTED_MODULE_2__.context.payload.ref;
+        const branchDeployed = _actions_github__WEBPACK_IMPORTED_MODULE_2__.context.ref;
         _actions_core__WEBPACK_IMPORTED_MODULE_1__.warning(`branch, ${branchDeployed}`);
-        _analytics__WEBPACK_IMPORTED_MODULE_3__.track({ branch: branchDeployed });
+        (0,_analytics__WEBPACK_IMPORTED_MODULE_3__.track)({ branch: branchDeployed });
         await _contentful_app_scripts__WEBPACK_IMPORTED_MODULE_0__.upload.nonInteractive({
             bundleDir: folder,
             organizationId,

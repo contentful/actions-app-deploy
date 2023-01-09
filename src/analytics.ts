@@ -1,31 +1,28 @@
 import Analytics from 'analytics-node';
 
-interface Properties {
-  branch: string;
+// Public write key scoped to data source
+const SEGMENT_WRITE_KEY = '5zLPIzVLZYVK40bEzDo8WbYp1omsbEWx'
+interface GitHubActionEventProperties {
+  branch: string; // branch to be deployed using the action
 }
 
-class AnalyticsClient {
-  private client: Analytics
-
-  constructor() {
-    this.client = new Analytics(process.env['write_key'] || '');
+export function track(properties: GitHubActionEventProperties) {
+  if (process.env['DISABLE_ANALYTICS']) {
+    return;
   }
 
-  track(properties: Properties) {
-    
-    const segmentEvent: Parameters<Analytics['track']>[0] = {
-      event: '',
+  const client = new Analytics(SEGMENT_WRITE_KEY);
+
+  try {
+    client.track({
+      event: 'actions-app-deploy',
       properties,
-    };
-
-    try {
-      this.client.track(segmentEvent);
-    } catch (e) {
-      console.error(e);
-    }
+      anonymousId: 'anonymous',
+      timestamp: new Date(),
+    });
+    // eslint-disable-next-line no-empty
+  } catch (e) {
+    console.error(e);
   }
 }
 
-const client = new AnalyticsClient();
-
-export default client;

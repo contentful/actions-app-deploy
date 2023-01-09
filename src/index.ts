@@ -1,7 +1,7 @@
 import { upload } from "@contentful/app-scripts";
-import * as core from '@actions/core'
-import * as github from '@actions/github'
-import  AnalyticsClient  from  './analytics'
+import * as core from "@actions/core";
+import * as github from "@actions/github";
+import { track } from "./analytics";
 
 async function deploy(): Promise<void> {
   try {
@@ -10,11 +10,11 @@ async function deploy(): Promise<void> {
     const accessToken: string = core.getInput("access-token");
     const folder: string = core.getInput("folder");
 
-    const branchDeployed = github.context.payload["ref"]
+    const branchDeployed = github.context.ref;
 
-    core.warning(`branch, ${branchDeployed}`)
+    core.warning(`branch, ${branchDeployed}`);
 
-    AnalyticsClient.track({branch: branchDeployed })
+    track({ branch: branchDeployed });
 
     await upload.nonInteractive({
       bundleDir: folder,
@@ -24,7 +24,7 @@ async function deploy(): Promise<void> {
       userAgentApplication: "contentful.actions-app-deploy",
     });
   } catch (error) {
-    core.setFailed(`${(error as any)?.message ?? error}`)
+    core.setFailed(`${(error as any)?.message ?? error}`);
   }
 }
 
