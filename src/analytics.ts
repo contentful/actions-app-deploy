@@ -17,12 +17,11 @@ export function track(properties: GitHubActionEventProperties) {
     client.track({
       event: 'actions-app-deploy',
       properties,
-      anonymousId: 'anonymous',
+      anonymousId: Date.now(),
       timestamp: new Date(),
     });
-    
+
   } catch (e) {
     console.error(e);
   }
 }
-
