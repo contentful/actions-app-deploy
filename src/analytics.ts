@@ -3,7 +3,8 @@ import Analytics from 'analytics-node';
 // Public write key scoped to data source
 const SEGMENT_WRITE_KEY = '5zLPIzVLZYVK40bEzDo8WbYp1omsbEWx'
 interface GitHubActionEventProperties {
-  branch: string; // branch to be deployed using the action
+  branch_name: string; // branch to be deployed using the action
+  app_key: string
 }
 
 export function track(properties: GitHubActionEventProperties) {

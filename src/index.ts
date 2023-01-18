@@ -12,9 +12,7 @@ async function deploy(): Promise<void> {
 
     const branchDeployed = github.context.ref;
 
-    core.warning(`branch, ${branchDeployed}`);
-
-    track({ branch: branchDeployed });
+    track({ branch_name: branchDeployed, app_key: appDefinitionId });
 
     await upload.nonInteractive({
       bundleDir: folder,
