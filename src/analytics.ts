@@ -16,7 +16,7 @@ export function track(properties: GitHubActionEventProperties) {
 
   try {
     client.track({
-      event: 'actions-app-deploy',
+      event: 'branch_deployed',
       properties,
       anonymousId: Date.now(),
       timestamp: new Date(),
