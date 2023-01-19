@@ -8,7 +8,7 @@ interface GitHubActionEventProperties {
 }
 
 export function track(properties: GitHubActionEventProperties) {
-  if (process.env['DISABLE_ANALYTICS']) {
+  if (process.env['CONTENTFUL_ACTIONS_DISABLE_ANALYTICS']) {
     return;
   }
 
