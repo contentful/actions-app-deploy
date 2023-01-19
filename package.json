@@ -6,7 +6,6 @@
   "license": "MIT",
   "description": "Custom GitHub Action to deploy frontend apps to Contentful.",
   "main": "index.js",
-  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rimraf build && rimraf dist && tsc && ncc build ./build/index.js --license licenses.txt",
