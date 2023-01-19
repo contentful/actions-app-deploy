@@ -2,7 +2,6 @@ import Analytics from "analytics-node";
 
 /**
  * Public write key scoped to data source member
- * SEGMENT_WRITE_KEY
  * @type {string}
  */
 const SEGMENT_WRITE_KEY = "5zLPIzVLZYVK40bEzDo8WbYp1omsbEWx";
