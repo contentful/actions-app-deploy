@@ -1,6 +1,10 @@
 import Analytics from "analytics-node";
 
-// Public write key scoped to data source
+/**
+ * Public write key scoped to data source member
+ * SEGMENT_WRITE_KEY
+ * @type {string}
+ */
 const SEGMENT_WRITE_KEY = "5zLPIzVLZYVK40bEzDo8WbYp1omsbEWx";
 interface GitHubActionEventProperties {
   branch_name: string; // branch deployed
@@ -9,9 +13,9 @@ interface GitHubActionEventProperties {
 
 export function track(
   properties: GitHubActionEventProperties,
-  CONTENTFUL_ACTION_DISABLE_ANALYTICS: string
+  contentful_action_disable_analytics: string
 ) {
-  if (CONTENTFUL_ACTION_DISABLE_ANALYTICS === "false") {
+  if (contentful_action_disable_analytics === "false") {
     return;
   }
 
