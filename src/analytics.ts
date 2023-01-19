@@ -23,6 +23,6 @@ export function track(properties: GitHubActionEventProperties) {
     });
 
   } catch (e) {
-    console.error(e);
+    // ignore any error, doesn't provide any value
   }
 }
