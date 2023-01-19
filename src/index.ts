@@ -9,10 +9,14 @@ async function deploy(): Promise<void> {
     const appDefinitionId: string = core.getInput("app-definition-id");
     const accessToken: string = core.getInput("access-token");
     const folder: string = core.getInput("folder");
+    const allowTracking: string = core.getInput("allow-tracking");
 
     const branchDeployed = github.context.ref;
 
-    track({ branch_name: branchDeployed, app_key: appDefinitionId });
+    track(
+      { branch_name: branchDeployed, app_key: appDefinitionId },
+      allowTracking
+    );
 
     await upload.nonInteractive({
       bundleDir: folder,

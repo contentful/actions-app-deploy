@@ -1,14 +1,17 @@
-import Analytics from 'analytics-node';
+import Analytics from "analytics-node";
 
 // Public write key scoped to data source
-const SEGMENT_WRITE_KEY = '5zLPIzVLZYVK40bEzDo8WbYp1omsbEWx'
+const SEGMENT_WRITE_KEY = "5zLPIzVLZYVK40bEzDo8WbYp1omsbEWx";
 interface GitHubActionEventProperties {
   branch_name: string; // branch deployed
-  app_key: string
+  app_key: string;
 }
 
-export function track(properties: GitHubActionEventProperties) {
-  if (process.env['CONTENTFUL_DISABLE_ANALYTICS']) {
+export function track(
+  properties: GitHubActionEventProperties,
+  CONTENTFUL_ACTION_DISABLE_ANALYTICS: string
+) {
+  if (CONTENTFUL_ACTION_DISABLE_ANALYTICS === "false") {
     return;
   }
 
@@ -16,12 +19,11 @@ export function track(properties: GitHubActionEventProperties) {
 
   try {
     client.track({
-      event: 'branch_deployed',
+      event: "branch_deployed",
       properties,
       anonymousId: Date.now(),
       timestamp: new Date(),
     });
-
   } catch (e) {
     // ignore any error, doesn't provide any value
   }

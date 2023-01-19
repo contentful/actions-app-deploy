@@ -13,6 +13,10 @@ inputs:
   folder:
     description: 'The folder which is deployed to Contentful App Hosting'
     required: true
+  allow-tracking:
+    description: 'The flag to allow tracking of the app-definition-id, branch deployed'
+    required: false
+    default: true
 runs:
   using: 'node16'
   main: 'dist/index.js'
