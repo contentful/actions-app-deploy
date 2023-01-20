@@ -56,6 +56,7 @@ jobs:
 - `app-definition-id` (_required_): The id of the app definition.
 - `access-token` (_required_): A personal access token for the Content Management API. Should be stored as a secret in your GitHub repository (`Settings` -> `Secrets` -> `Actions`).
 - `folder` (_required_): The folder which is deployed to Contentful App Hosting. Usually, this is the `build` folder.
+- `allow-tracking` (_optional_): Flag that allows us to track the usage of the GitHub Action. Accepted values can be either `true` or `false`, default value will be `true`.
 
 ## Running
 
