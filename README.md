@@ -6,7 +6,7 @@ This GitHub Action deploys your frontend apps to Contentful App Hosting.
 
 [Contentful](https://www.contentful.com/) provides content infrastructure for digital teams to power content in websites, apps, and devices. Unlike a CMS, Contentful was built to integrate with the modern software stack. It offers a central hub for structured content, powerful management and delivery APIs, and a customisable web app that enables developers and content creators to ship digital products faster.
 
-Contentful is a hosted service, with a free plan for small projects. It is available in 14 languages and has over 100,000 users worldwide.
+Contentful is a hosted service, with a free plan for small projects. It is available in 14 languages and has over 100, 000 users worldwide.
 
 ## What are Contentful Apps
 
@@ -52,11 +52,11 @@ jobs:
 
 ### Parameters
 
-- `organization-id` (_required_): The id of the organization.
-- `app-definition-id` (_required_): The id of the app definition.
-- `access-token` (_required_): A personal access token for the Content Management API. Should be stored as a secret in your GitHub repository (`Settings` -> `Secrets` -> `Actions`).
-- `folder` (_required_): The folder which is deployed to Contentful App Hosting. Usually, this is the `build` folder.
-- `allow-tracking` (_optional_): Flag that allows us to track the usage of the GitHub Action. Accepted values can be either `true` or `false`, default value will be `true`.
+* `organization-id` (_required_): The id of the organization.
+* `app-definition-id` (_required_): The id of the app definition.
+* `access-token` (_required_): A personal access token for the Content Management API. Should be stored as a secret in your GitHub repository (`Settings` -> `Secrets` -> `Actions`).
+* `folder` (_required_): The folder which is deployed to Contentful App Hosting. Usually, this is the `build` folder.
+* `allow-tracking` (_optional_): Flag that allows us to track the usage of the GitHub Action. Accepted values can be either `true` or `false`, default value will be `true`.
 
 ## Running
 
@@ -74,7 +74,7 @@ Click the "Subscription" tab. The ID is listed beneath the organization name.
 **Where to find the app definition ID**
 
 Log into Contentful.
-From your space, go to the `Apps` tab and click `Custom apps`.
+From your space, go to the `Apps` tab and click `Custom apps` .
 Click `Manage app definitions` and you will see an overview of your custom apps, with the ID printed in the ID column.
 
 **Where to find or create a personal access token**
