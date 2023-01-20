@@ -48,6 +48,7 @@ jobs:
           app-definition-id: ${{ secrets.APP_DEFINITION_ID }}
           access-token: ${{ secrets.ACCESS_TOKEN }}
           folder: build
+          allow-tracking: true
 ```
 
 ### Parameters
