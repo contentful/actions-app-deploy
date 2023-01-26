@@ -81,6 +81,32 @@ Click `Manage app definitions` and you will see an overview of your custom apps,
 
 You can read more about access tokens [here](https://www.contentful.com/help/personal-access-tokens/)
 
+## Development
+
+### Releasing a new version
+
+1. Add a tag to the latest commit
+```
+git tag -a v1.x.x -m "v1.x.x"
+```
+
+2. Move the stable tag to the latest commit
+```
+git tag --delete v1
+git tag -a v1.x.x -m "v1.x.x"
+```
+
+3. Push tags and override existing v1
+
+```
+git tag push --tags --force
+```
+
+4. [Create a new release](https://github.com/contentful/actions-app-deploy/releases/new)
+    * "Generate release notes" add a changelog
+    * Shorten/Rewrite the "What's changed" section
+
+
 ## License
 
 [MIT](LICENSE)
