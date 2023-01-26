@@ -1,0 +1,29 @@
+version: 2.1
+
+orbs:
+  node: circleci/node@5.1.0
+
+jobs:
+  lint-and-test:
+    docker:
+      - image: "cimg/base:stable"
+    steps:
+      - checkout
+
+      # Install node version from .nvmrc
+      - node/install
+
+      - run: npm run format-check
+      - run: npm run lint
+      - run: npm run build
+      - run:
+          name: Build output is up-to-date
+          command: |
+            if ! [[ -z "$(git status --porcelain)" ]]; then 
+              exit 1
+            fi
+
+workflows:
+  build:
+    jobs:
+      - lint-and-test
