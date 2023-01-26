@@ -18,9 +18,12 @@ export function track(
     return;
   }
 
-  const client = new Analytics(SEGMENT_WRITE_KEY);
-
   try {
+    const client = new Analytics(SEGMENT_WRITE_KEY, {
+      errorHandler: () => {
+        // noop
+      },
+    });
     client.track({
       event: "branch_deployed",
       properties,
