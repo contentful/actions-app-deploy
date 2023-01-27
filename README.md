@@ -103,9 +103,6 @@ git tag -a v1.x.x -m "v1.x.x"
 
 ```
 git push origin v1.x.x
-```
-
-```
 git push origin v1 --force
 ```
 
