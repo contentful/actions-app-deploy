@@ -99,7 +99,7 @@ git tag --delete v1
 git tag -a v1.x.x -m "v1.x.x"
 ```
 
-4. Push tags and override existing v1
+4. Push new tag and override existing v1
 
 ```
 git push origin v1.x.x
