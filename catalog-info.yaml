@@ -1,0 +1,24 @@
+# Backstage documentation
+# https://backstage.io/docs/features/software-catalog/descriptor-format/
+
+# !!! WARNING !!!
+# This is a template file with a number of fields that need to be filled before merging this to the default branch
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: actions-app-deploy 
+  description: GitHub Action to deploy frontend apps to Contentful App Hosting
+  annotations:
+    github.com/project-slug: contentful/actions-app-deploy 
+    contentful.com/service-tier: "unknown" #1, 2, 3, 4
+  tags:
+    - update-me
+    #need to add sast.yaml to .github/workflows and enable it in polaris dashboard
+    #once that is done this can be changed to sast-enabled
+    - sast-disabled
+    #make this match the value from service-tier above
+    - tier-unknown
+spec:
+  type: function
+  lifecycle: production  
+  owner: group:team-developer-experience
