@@ -4,15 +4,13 @@
 # !!! WARNING !!!
 # This is a template file with a number of fields that need to be filled before merging this to the default branch
 apiVersion: backstage.io/v1alpha1
-# Component, API, Template, Group, User, Resource, System, Domain, Location
-kind: unknown
+kind: Component
 metadata:
   name: actions-app-deploy 
-  description: unknown
+  description: GitHub Action to deploy frontend apps to Contentful App Hosting
   annotations:
     github.com/project-slug: contentful/actions-app-deploy 
     contentful.com/service-tier: "unknown" #1, 2, 3, 4
-
   tags:
     - update-me
     #need to add sast.yaml to .github/workflows and enable it in polaris dashboard
@@ -21,10 +19,6 @@ metadata:
     #make this match the value from service-tier above
     - tier-unknown
 spec:
-  #cli, component, contentful.com/template, documentation, function, library, service, template, website
-  type: unknown 
-  #deprecated, experimental, production, unknown
-  lifecycle: unknown  
-  system: unknown #optional
-  # your team name as it appears in github when tagging them for reviews
-  owner: group:team-unknown 
+  type: function
+  lifecycle: production  
+  owner: group:team-developer-experience
