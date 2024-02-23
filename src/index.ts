@@ -9,6 +9,7 @@ async function deploy(): Promise<void> {
     const appDefinitionId: string = core.getInput("app-definition-id");
     const accessToken: string = core.getInput("access-token");
     const folder: string = core.getInput("folder");
+    const comment: string | undefined = core.getInput("comment");
     const allowTracking: string = core.getInput("allow-tracking");
 
     const branchDeployed = github.context.ref;
@@ -23,6 +24,7 @@ async function deploy(): Promise<void> {
       organizationId,
       definitionId: appDefinitionId,
       token: accessToken,
+      comment: comment,
       userAgentApplication: "contentful.actions-app-deploy",
     });
   } catch (error) {

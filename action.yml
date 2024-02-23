@@ -13,6 +13,9 @@ inputs:
   folder:
     description: 'The folder which is deployed to Contentful App Hosting'
     required: true
+  comment:
+    description: 'A comment which will be associated with the created AppBundle. Can be used to differentiate bundles.'
+    required: false
   allow-tracking:
     description: 'The flag to allow tracking of the app-definition-id, branch deployed'
     required: false
