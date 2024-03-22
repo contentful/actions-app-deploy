@@ -26,7 +26,7 @@ async function deploy(): Promise<void> {
       userAgentApplication: "contentful.actions-app-deploy",
     });
   } catch (error) {
-    core.setFailed(`${(error as any)?.message ?? error}`);
+    core.setFailed(`${error instanceof Error ? error.message : error}`);
   }
 }
 
