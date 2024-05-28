@@ -21,4 +21,4 @@ metadata:
 spec:
   type: function
   lifecycle: production  
-  owner: group:team-developer-experience
+  owner: group:team-tundra
