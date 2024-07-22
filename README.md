@@ -84,32 +84,13 @@ You can read more about access tokens [here](https://www.contentful.com/help/per
 
 ## Development
 
-### Releasing a new version
+### Release Process
 
-1. Ensure `npm run build` was run and the latest build output was committed.
-2. Add a tag to the latest commit
+Releases are automated using [release-please](https://github.com/googleapis/release-please). The release process is triggered by merging changes into the `main` branch.
 
-```
-git tag -a v1.x.x -m "v1.x.x"
-```
-
-3. Move the stable tag to the latest commit
-
-```
-git tag --delete v1
-git tag -a v1.x.x -m "v1.x.x"
-```
-
-4. Push new tag and overwrite existing v1
-
-```
-git push origin v1.x.x
-git push origin v1 --force
-```
-
-5. [Create a new release](https://github.com/contentful/actions-app-deploy/releases/new)
-   - "Generate release notes" add a changelog
-   - Shorten/Rewrite the "What's changed" section
+1. Ensure your commit messages follow the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) specification.
+2. Merge your changes into the `main` branch.
+3. The GitHub Actions workflow will automatically handle versioning, changelog generation, and creating GitHub releases.
 
 ## License
 
