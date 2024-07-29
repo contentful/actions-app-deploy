@@ -6,7 +6,7 @@ orbs:
 jobs:
   lint-and-test:
     docker:
-      - image: "cimg/base:stable"
+      - image: "cimg/base:current"
     steps:
       - checkout
 
