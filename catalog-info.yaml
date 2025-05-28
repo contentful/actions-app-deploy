@@ -21,4 +21,4 @@ metadata:
 spec:
   type: function
   lifecycle: production  
-  owner: group:team-tundra
+  owner: group:team-extensibility
