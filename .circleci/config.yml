@@ -11,7 +11,8 @@ jobs:
       - checkout
 
       # Install node version from .nvmrc
-      - node/install
+      - node/install:
+          with-cache: false
 
       - run: npm ci
       - run: npm run format-check
