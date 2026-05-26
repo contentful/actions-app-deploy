@@ -20,5 +20,6 @@ metadata:
     - tier-unknown
 spec:
   type: function
-  lifecycle: production  
+  lifecycle: production
+  system: app-framework
   owner: group:team-extensibility
