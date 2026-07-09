@@ -36,15 +36,15 @@
     "analytics-node": "6.2.0"
   },
   "devDependencies": {
-    "@tsconfig/node20": "20.1.2",
+    "@tsconfig/node24": "^24.0.4",
     "@types/analytics-node": "3.1.10",
-    "@types/node": "20.11.30",
+    "@types/node": "24.13.2",
     "@typescript-eslint/eslint-plugin": "7.3.1",
     "@vercel/ncc": "0.34.0",
     "eslint": "8.57.0",
     "husky": "8.0.2",
     "prettier": "2.8.1",
     "rimraf": "3.0.2",
-    "typescript": "5.4.3"
+    "typescript": "6.0.3"
   }
 }
