@@ -42,7 +42,7 @@
     "@typescript-eslint/eslint-plugin": "7.18.0",
     "@vercel/ncc": "0.34.0",
     "eslint": "8.57.1",
-    "husky": "8.0.3",
+    "husky": "9.1.7",
     "prettier": "2.8.8",
     "rimraf": "3.0.2",
     "typescript": "5.4.3"
