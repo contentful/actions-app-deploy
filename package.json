@@ -41,9 +41,9 @@
     "@types/node": "20.11.30",
     "@typescript-eslint/eslint-plugin": "7.3.1",
     "@vercel/ncc": "0.34.0",
-    "eslint": "8.57.0",
+    "eslint": "8.57.1",
     "husky": "8.0.3",
-    "prettier": "2.8.1",
+    "prettier": "2.8.8",
     "rimraf": "3.0.2",
     "typescript": "5.4.3"
   }
