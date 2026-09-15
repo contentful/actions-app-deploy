@@ -22,4 +22,4 @@ spec:
   type: function
   lifecycle: production
   system: app-framework
-  owner: group:team-extensibility
+  owner: group:group-applied-ai-solutions
