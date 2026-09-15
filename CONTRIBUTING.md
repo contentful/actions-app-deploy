@@ -82,7 +82,7 @@ existing history by hand.
 ## Pull Requests
 
 - Squash-merge to `master` (note: the default branch is `master`, not `main`).
-- `.github/CODEOWNERS` assigns all files to `@contentful/team-extensibility`, so a team review is
+- `.github/CODEOWNERS` assigns all files to `@contentful/group-applied-ai-solutions`, so a team review is
   required.
 - Call out in the PR body whether consumer workflows need any change — every consumer on `@v1`
   inherits merged behavior as soon as the tag moves.
